@@ -7,7 +7,7 @@ import {
   type MRT_ColumnFiltersState,
   type MRT_SortingState,
 } from 'material-react-table';
-import { Box, Chip, Typography, Button } from '@mui/material';
+import { Box, Chip, Typography } from '@mui/material';
 import { useRouter } from 'next/navigation';
 import { Patient } from '@/data/mockData';
 
@@ -239,26 +239,7 @@ export default function PatientsTable({ patients, title = 'Patients', readOnly =
         <Typography variant="h4" sx={{ fontWeight: 700, color: '#1f2937' }}>
           {title}
         </Typography>
-        <Box sx={{ display: 'flex', gap: 2, alignItems: 'center' }}>
-          {!readOnly && (
-            <Button
-              variant="contained"
-              color="primary"
-              onClick={() => router.push('/patient/new')}
-              sx={{ textTransform: 'none' }}
-            >
-              Add Patient
-            </Button>
-          )}
-          <Button
-            variant="outlined"
-            color="primary"
-            onClick={() => router.push('/all-patients')}
-            sx={{ textTransform: 'none' }}
-          >
-            View All Patients
-          </Button>
-        </Box>
+
       </Box>
 
       <Box sx={{ 
